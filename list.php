@@ -1,9 +1,7 @@
 <?php
 $dir = __DIR__;
 $files = scandir($dir);
-
 ?>
-
 <html>
   <head>
     <meta charset="utf-8">
