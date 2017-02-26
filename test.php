@@ -3,15 +3,20 @@ if(!$_GET OR $_GET['id']==='') header('Location: list.php');
 $id = $_GET['id'];
 $array = json_decode(file_get_contents($id.'.json'), true);
 $message ='';
-if(isset($_POST['submit'])){ 
-$check = $_POST['response'];
-foreach($array as $arr => $item){
-if($item[$check]===false){
+if(isset($_POST['submit'])){
+	if(isset($_POST['response'])){
+	$check = $_POST['response'];
+	foreach($array as $arr => $item){
+	if($item[$check]===false){
 	 $message= '<p style="color: red; font-size:20px;">ответ неверный, попробуйте еще раз</p>';
-} else{
+	} else{
 	$message = '<p style ="color: green; font-size:20px;">ответ верный</p>';
 	}
-  }
+    }
+} 
+	else {
+	$message = '<p style="color: red; font-size:20px;">Выберите один из вариантов ответа!</p>';
+	}
 }
 ?>
 
