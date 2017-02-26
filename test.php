@@ -13,7 +13,6 @@ if($arr[$check]===false){
 	}
   }
 }
-
 ?>
 
 <!DOCTYPE html>
